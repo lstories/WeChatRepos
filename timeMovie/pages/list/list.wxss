@@ -1,0 +1,70 @@
+/* pages/list/list.wxss */
+.container1 view{
+  width: 100px;
+  height: 100px;
+  text-align: center;
+  line-height: 100px;
+}
+.container1 VIEW:nth-child(1){
+  background-color: lightgreen;
+}
+.container1 VIEW:nth-child(2){
+  background-color: lightblue;
+}
+.container1 VIEW:nth-child(3){
+  background-color: lightpink;
+}
+
+.container1{
+  display: flex;
+  margin: 5px;
+  justify-content: space-between;
+}
+
+.container2 view{
+  widows: 100px;
+  height: 100px;
+  text-align: center;
+  line-height: 100px;
+}
+.container2 view:nth-child(1){
+  background-color: lightgreen;
+}
+.container2 view:nth-child(2){
+  background-color: lightblue;
+}
+.container2 view:nth-child(3){
+  background-color: lightpink;
+}
+.container2{
+  margin-top: 10px;
+  margin-left: 5px;
+  border: 1px solid red;
+  /* 给scroll-view 固定高度 */
+  height: 120px;
+  width: 100px;
+}
+
+.swiper-container{
+  margin: 10px;
+  height: 150px; /* 轮播图容器的高度 */
+}
+.item{
+  height: 100%;
+  line-height: 150px;
+  text-align: center;
+}
+swiper-item:nth-child(1) .item{
+  background-color: lightgreen;
+}
+swiper-item:nth-child(2) .item{
+  background-color: lightskyblue;
+}
+swiper-item:nth-child(3) .item{
+  background-color: lightpink;
+}
+
+.img{
+  border: 1px solid red;
+  
+}

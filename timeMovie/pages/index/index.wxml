@@ -1,0 +1,94 @@
+<!--index.wxml-->
+<!-- 插值语法 -->
+<view style="text-align: center;">
+  <!-- 插值语法 -->
+  <view>{{info}}</view>
+  <!-- image属性的插值语法, 动态绑定 -->
+  <view>
+    <image src="{{imgSrc}}" mode="aspectFit" />
+  </view>
+  <!-- 插值语法内的三元运算 -->
+  <view>
+    {{randomNum >= 5 ? '数字大于等于5' : '数字小于5'}}
+  </view>
+  <!-- 插值语法内的算数运算 -->
+  <view>
+    生成100以内的随机数: {{randomNum1 * 100}}
+  </view>
+</view>
+
+<!-- 事件绑定 -->
+<view>
+  <!-- 
+    事件:
+    tap: 手指触摸后马上离开, 类似于HTML中的click事件
+    input: 文本框的输入事件
+    change: 状态改变时触发
+   -->
+  <!-- bind事件 -->
+  <view class="outer-view">
+    <button type="primary" bindtap="btnTapHandler">按钮</button>
+  </view>
+  <!-- 在事件处理函数中为data中的数据赋值(通过this.setData()方法) -->
+  <view>
+    <view style="text-align: center;">{{count}}</view>
+    <view>
+      <button type="primary" bindtap="changeCount">点我count+1</button>
+    </view>
+  </view>
+  <!-- 事件传参 -->
+  <view style="margin-top: 5px;">
+    <view style="text-align: center;">count的值是: {{count}}</view>
+    <!-- 事件传参与vue中不同, data-* 自定义属性传参, *代表参数的名字 -->
+    <button type="primary" bindtap="btnHandler" data-info="{{2}}">事件传参</button>
+  </view>
+
+  <!-- bindinput的语法格式, input事件 -->
+  <view>
+    <input type="text" bindinput="inputHandler" />
+  </view>
+  <view>
+    <input value="{{msg}}" type="text" bindinput="ipHandler" />
+  </view>
+
+  <!-- 条件渲染 -->
+  <view>
+    <view wx:if="{{type === 1}}"> 男 </view>
+    <view wx:elif="{{type === 2}}"> 女 </view>
+    <view wx:else="{{type === 3}}"> 保密 </view>
+    <button bindtap="changeType">按type+1</button>
+  </view>
+
+  <!-- block标签 -->
+  <block wx:if="{{true}}">
+    <view> 男 </view>
+    <view> 女 </view>
+  </block>
+
+  <!-- hidden的使用 -->
+  <view hidden="{{!flag}}">
+    条件为true的时候隐藏元素, 否则显示
+  </view>
+  <!-- wx:if 和 hidden 的对戏 -->
+  <view wx:if="{{flag}}">
+    这是使用 wx:if 控制的元素
+  </view>
+
+  <!-- wx:for 列表循环 -->
+  <!-- <view wx:for="{{arr1}}">
+    索引是: {{index}}, 当前项是: {{item}}
+  </view> -->
+  <!-- 
+    使用 wx:for-index 指定当前循环项的索引的变量名 
+    使用 wx:for-item 指定当前项的变量名 
+  -->
+  <!-- <view wx:for="{{arr1}}" wx:for-index="idx" wx:for-item="itemName">
+    索引是:{{idx}}, 当前项是: {{itemName}}
+  </view> -->
+
+  <!-- wx:key -->
+  <view wx:for="{{userList}}" wx:key="id" class="username">
+    {{item.name}}
+  </view>
+
+</view>
