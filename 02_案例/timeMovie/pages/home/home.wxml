@@ -1,0 +1,3 @@
+<!--pages/home/home.wxml-->
+<button bindtap="getinfo">点击我get请求</button>
+<button bindtap="postinfo">点击我post请求</button>
