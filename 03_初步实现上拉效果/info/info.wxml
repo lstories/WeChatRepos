@@ -1,0 +1,6 @@
+<!--pages/info/info.wxml-->
+<text>pages/info/info.wxml</text>
+<!-- 后退 -->
+<navigator url="" open-type="navigateBack" delta="1">非编程式的后退</navigator>
+<!-- 编程式的后退 -->
+<button bindtap="goBack">编程式的后退</button>
